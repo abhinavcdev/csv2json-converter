@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gray-900 text-white font-mono;
+  }
+}
+
+@layer components {
+  .cyber-border {
+    @apply border border-blue-500/30 rounded-lg;
+    background: linear-gradient(145deg, rgba(0, 245, 255, 0.05), rgba(139, 92, 246, 0.05));
+  }
+  
+  .cyber-button {
+    @apply bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold py-2 px-6 rounded-lg;
+    @apply hover:from-purple-500 hover:to-pink-500 transition-all duration-300;
+    @apply shadow-lg hover:shadow-blue-500/25;
+  }
+  
+  .cyber-input {
+    @apply bg-gray-800 border border-blue-500/30 rounded-lg px-4 py-2;
+    @apply focus:border-blue-500 focus:ring-1 focus:ring-blue-500/50;
+    @apply transition-all duration-300;
+  }
+  
+  .glow-text {
+    text-shadow: 0 0 10px currentColor;
+  }
+}

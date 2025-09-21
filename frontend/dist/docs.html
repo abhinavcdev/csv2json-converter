@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSV2JSON - Documentation</title>
+    <meta name="description" content="Complete documentation for CSV2JSON converter. API reference, CLI usage, and examples.">
+    <script>
+        // Inline critical CSS for faster loading
+        document.documentElement.style.fontFamily = "'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif";
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+        
+        .code-block {
+            background: #0f172a;
+            border: 1px solid #334155;
+            border-radius: 8px;
+            padding: 1rem;
+            overflow-x: auto;
+        }
+        
+        .sidebar-nav a {
+            transition: all 0.2s ease;
+        }
+        
+        .sidebar-nav a:hover {
+            background-color: #f3f4f6;
+            padding-left: 1rem;
+        }
+        
+        .sidebar-nav a.active {
+            background-color: #e5e7eb;
+            border-right: 3px solid #374151;
+            font-weight: 500;
+        }
+        
+        /* Performance optimizations */
+        * {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Navigation -->
+    <nav class="bg-white border-b border-gray-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <div class="w-8 h-8 bg-gray-900 rounded flex items-center justify-center">
+                            <span class="text-white text-sm font-mono font-bold">C2J</span>
+                        </div>
+                        <span class="ml-3 text-xl font-semibold text-gray-900">CSV2JSON</span>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-8">
+                    <a href="landing.html" class="text-gray-600 hover:text-gray-900 px-3 py-2 text-sm font-medium">Home</a>
+                    <a href="app.html" class="text-gray-600 hover:text-gray-900 px-3 py-2 text-sm font-medium">App</a>
+                    <span class="text-gray-900 px-3 py-2 text-sm font-medium">Documentation</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="flex">
+        <!-- Sidebar -->
+        <nav class="w-64 bg-gray-50 min-h-screen border-r border-gray-200 p-6">
+            <div class="sidebar-nav space-y-1">
+                <a href="#getting-started" class="block py-2 px-3 text-sm text-gray-700 rounded-md">Getting Started</a>
+                <a href="#api-reference" class="block py-2 px-3 text-sm text-gray-700 rounded-md">API Reference</a>
+                <a href="#cli-tool" class="block py-2 px-3 text-sm text-gray-700 rounded-md">CLI Tool</a>
+                <a href="#examples" class="block py-2 px-3 text-sm text-gray-700 rounded-md">Examples</a>
+                <a href="#performance" class="block py-2 px-3 text-sm text-gray-700 rounded-md">Performance</a>
+                <a href="#faq" class="block py-2 px-3 text-sm text-gray-700 rounded-md">FAQ</a>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="flex-1 p-8 max-w-4xl">
+            <!-- Getting Started -->
+            <section id="getting-started" class="mb-16">
+                <h1 class="text-4xl font-bold text-gray-900 mb-6">Documentation</h1>
+                <p class="text-xl text-gray-600 mb-8">
+                    CSV2JSON is a high-performance converter that transforms CSV data into JSON format at lightning speed.
+                </p>
+
+                <h2 class="text-2xl font-semibold text-gray-900 mb-4">Quick Start</h2>
+                <p class="text-gray-600 mb-4">
+                    Get started with CSV2JSON in three ways: Web interface, REST API, or CLI tool.
+                </p>
+
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+                    <h3 class="font-semibold text-blue-900 mb-2">Web Interface</h3>
+                    <p class="text-blue-800 text-sm">
+                        Visit <a href="app.html" class="underline">the converter app</a> to upload and convert files directly in your browser.
+                    </p>
+                </div>
+            </section>
+
+            <!-- API Reference -->
+            <section id="api-reference" class="mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-6">API Reference</h2>
+                
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">POST /upload</h3>
+                    <p class="text-gray-600 mb-4">Convert a CSV file to JSON format.</p>
+                    
+                    <h4 class="font-semibold text-gray-900 mb-2">Parameters</h4>
+                    <div class="overflow-x-auto mb-4">
+                        <table class="min-w-full border border-gray-200">
+                            <thead class="bg-gray-50">
+                                <tr>
+                                    <th class="px-4 py-2 text-left text-sm font-medium text-gray-900">Parameter</th>
+                                    <th class="px-4 py-2 text-left text-sm font-medium text-gray-900">Type</th>
+                                    <th class="px-4 py-2 text-left text-sm font-medium text-gray-900">Description</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-200">
+                                <tr>
+                                    <td class="px-4 py-2 text-sm font-mono text-gray-900">file</td>
+                                    <td class="px-4 py-2 text-sm text-gray-600">File</td>
+                                    <td class="px-4 py-2 text-sm text-gray-600">CSV file to convert</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-2 text-sm font-mono text-gray-900">delimiter</td>
+                                    <td class="px-4 py-2 text-sm text-gray-600">String</td>
+                                    <td class="px-4 py-2 text-sm text-gray-600">Field delimiter (default: ",")</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-2 text-sm font-mono text-gray-900">output_format</td>
+                                    <td class="px-4 py-2 text-sm text-gray-600">String</td>
+                                    <td class="px-4 py-2 text-sm text-gray-600">"array" or "object"</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h4 class="font-semibold text-gray-900 mb-2">Example Request</h4>
+                    <div class="code-block text-green-400 font-mono text-sm mb-4">
+curl -X POST http://localhost:8080/upload \<br>
+  -F "file=@data.csv" \<br>
+  -F "delimiter=," \<br>
+  -F "output_format=array"
+                    </div>
+                </div>
+            </section>
+
+            <!-- CLI Tool -->
+            <section id="cli-tool" class="mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-6">CLI Tool</h2>
+                <p class="text-gray-600 mb-4">
+                    Use CSV2JSON from the command line for batch processing and automation.
+                </p>
+
+                <h3 class="text-xl font-semibold text-gray-900 mb-4">Installation</h3>
+                <div class="code-block text-green-400 font-mono text-sm mb-6">
+go install github.com/yourorg/csv2json@latest
+                </div>
+
+                <h3 class="text-xl font-semibold text-gray-900 mb-4">Usage</h3>
+                <div class="code-block text-green-400 font-mono text-sm mb-6">
+csv2json -i input.csv -o output.json<br>
+csv2json -server  # Start web server
+                </div>
+            </section>
+
+            <!-- Examples -->
+            <section id="examples" class="mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-6">Examples</h2>
+                
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Basic Conversion</h3>
+                    <p class="text-gray-600 mb-4">Convert a simple CSV file:</p>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-gray-900 mb-2">Input CSV</h4>
+                            <div class="code-block text-gray-300 font-mono text-sm">
+name,age,city<br>
+John,30,New York<br>
+Jane,25,Boston
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-900 mb-2">Output JSON</h4>
+                            <div class="code-block text-gray-300 font-mono text-sm">
+[<br>
+  {"name": "John", "age": 30, "city": "New York"},<br>
+  {"name": "Jane", "age": 25, "city": "Boston"}<br>
+]
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Performance -->
+            <section id="performance" class="mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-6">Performance</h2>
+                <p class="text-gray-600 mb-6">
+                    CSV2JSON is optimized for high-throughput data processing with enterprise-grade performance.
+                </p>
+
+                <div class="grid md:grid-cols-3 gap-6 mb-8">
+                    <div class="bg-gray-50 rounded-lg p-6 text-center">
+                        <div class="text-3xl font-bold text-blue-600 mb-2">270K</div>
+                        <div class="text-gray-600">Rows/second</div>
+                    </div>
+                    <div class="bg-gray-50 rounded-lg p-6 text-center">
+                        <div class="text-3xl font-bold text-green-600 mb-2">2GB</div>
+                        <div class="text-gray-600">Max file size</div>
+                    </div>
+                    <div class="bg-gray-50 rounded-lg p-6 text-center">
+                        <div class="text-3xl font-bold text-purple-600 mb-2">< 1s</div>
+                        <div class="text-gray-600">Response time</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ -->
+            <section id="faq" class="mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-6">FAQ</h2>
+                
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">What file formats are supported?</h3>
+                        <p class="text-gray-600">CSV2JSON supports standard CSV files with customizable delimiters including comma, semicolon, tab, and pipe.</p>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">What's the maximum file size?</h3>
+                        <p class="text-gray-600">The system supports files up to 2GB in size. Large files are automatically streamed for optimal memory usage.</p>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">How fast is the conversion?</h3>
+                        <p class="text-gray-600">CSV2JSON processes up to 270,000 rows per second using optimized Go algorithms and concurrent processing.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Update active navigation item on scroll
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.sidebar-nav a');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
