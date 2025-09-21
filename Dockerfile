@@ -2,7 +2,7 @@
 FROM node:18-alpine AS frontend-builder
 WORKDIR /app/frontend
 COPY frontend/package*.json ./
-RUN npm ci --only=production
+RUN npm install --omit=dev
 COPY frontend/ .
 RUN npm run build
 
@@ -23,7 +23,7 @@ WORKDIR /root/
 COPY --from=backend-builder /app/csv2json .
 
 # Copy the frontend build
-COPY --from=frontend-builder /app/frontend/build ./frontend/dist
+COPY --from=frontend-builder /app/frontend/dist ./frontend/dist
 
 # Expose port
 EXPOSE 8080
