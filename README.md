@@ -1,10 +1,10 @@
 # CSV2JSON - Ultra-High Performance CSV to JSON Converter
 
-⚡ **World-class performance**: 2.45x faster than legacy implementations, 1.93x faster than Node.js csvtojson  
-🚀 **Memory efficient**: 60% memory reduction with advanced optimization techniques  
-🔧 **Production ready**: CLI, REST API, and modern web interface with comprehensive features
+**World-class performance**: 2.45x faster than legacy implementations, 1.93x faster than Node.js csvtojson  
+**Memory efficient**: 60% memory reduction with advanced optimization techniques  
+**Production ready**: CLI, REST API, and modern web interface with comprehensive features
 
-## 🏆 Performance Highlights
+## Performance Highlights
 
 | Metric | CSV2JSON Ultra | Node.js csvtojson | Improvement |
 |--------|----------------|-------------------|-------------|
@@ -13,7 +13,7 @@
 | **CPU utilization** | **>150%** | ~140% | **Multi-core mastery** |
 | **Throughput** | **270K rows/sec** | ~140K rows/sec | **Nearly 2x** |
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Installation
 ```bash
@@ -32,7 +32,7 @@ make build
 # Access at http://localhost:8080
 ```
 
-## 🔧 Advanced Usage
+## Advanced Usage
 
 ### CLI Tool - Complete Options
 ```bash
@@ -98,14 +98,14 @@ curl http://localhost:8080/health
 
 Access the futuristic web UI at `http://localhost:8080`:
 
-- 🎯 **Drag & Drop**: Intuitive file upload
-- ⚡ **Real-time Preview**: Instant conversion feedback  
-- 🎛️ **Advanced Options**: Full control over conversion settings
-- 📱 **Responsive Design**: Works on all devices
-- 🌙 **Dark Theme**: Modern, eye-friendly interface
-- 💾 **Download Results**: One-click JSON download
+- **Drag & Drop**: Intuitive file upload
+- **Real-time Preview**: Instant conversion feedback  
+- **Advanced Options**: Full control over conversion settings
+- **Responsive Design**: Works on all devices
+- **Dark Theme**: Modern, eye-friendly interface
+- **Download Results**: One-click JSON download
 
-## 🏗️ Ultra-Optimization Architecture
+## Ultra-Optimization Architecture
 
 ```
 ┌─────────────────┐    ┌──────────────────┐    ┌─────────────────┐
@@ -265,7 +265,7 @@ go tool pprof mem.prof
 - ✅ **Edge Case Handling**: Empty files, malformed CSV, large datasets
 - ✅ **Cross-Platform**: Tested on Linux, macOS, Windows
 
-## 🐳 Docker Deployment
+## Docker Deployment
 
 ### Multi-Stage Build
 ```bash
@@ -297,7 +297,7 @@ services:
       retries: 3
 ```
 
-## 🚀 Performance Tips
+## Performance Tips
 
 ### For Maximum Speed
 1. **Use object format** for column-heavy data
@@ -316,7 +316,7 @@ services:
 - **Disk I/O**: Use SSD storage for large file processing
 - **Network**: Enable gzip compression for API responses
 
-## 📈 Roadmap
+## Roadmap
 
 ### Planned Enhancements
 - [ ] **Streaming CSV parser** for even larger files
@@ -326,7 +326,7 @@ services:
 - [ ] **GraphQL API** for advanced querying
 - [ ] **WebAssembly build** for browser usage
 
-## 🤝 Contributing
+## Contributing
 
 We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md).
 
@@ -344,11 +344,11 @@ make dev
 - Documentation improvements
 - Test coverage expansion
 
-## 📄 License
+## License
 
 MIT License - see [LICENSE](LICENSE) file for details.
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 **Core Technologies:**
 - [Go](https://golang.org/) - Systems programming language
